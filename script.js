@@ -1,1 +1,39 @@
 //your JS code here. If required.
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>MyBookList</h1>
+
+    <div class="form-group">
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="author" placeholder="Author">
+        <input type="text" id="isbn" placeholder="ISBN">
+
+        <button id="submit">Submit</button>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN#</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="book-list">
+        </tbody>
+    </table>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
