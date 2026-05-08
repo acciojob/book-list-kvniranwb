@@ -1,39 +1,25 @@
-//your JS code here. If required.
-<!DOCTYPE html>
-<html>
+const submitBtn = document.getElementById("submit");
+const bookList = document.getElementById("book-list");
 
-<head>
-    <link rel="stylesheet" href="styles.css">
-</head>
+submitBtn.addEventListener("click", function () {
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const isbn = document.getElementById("isbn").value;
 
-<body>
+    if (!title || !author || !isbn) return;
 
-    <h1>MyBookList</h1>
+    const row = document.createElement("tr");
 
-    <div class="form-group">
-        <input type="text" id="title" placeholder="Title">
-        <input type="text" id="author" placeholder="Author">
-        <input type="text" id="isbn" placeholder="ISBN">
+    row.innerHTML = `
+        <td>${title}</td>
+        <td>${author}</td>
+        <td>${isbn}</td>
+        <td><button class="delete">Clear</button></td>
+    `;
 
-        <button id="submit">Submit</button>
-    </div>
+    bookList.appendChild(row);
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>ISBN#</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-
-        <tbody id="book-list">
-        </tbody>
-    </table>
-
-    <script src="./script.js"></script>
-
-</body>
-
-</html>
+    document.getElementById("title").value = "";
+    document.getElementById("author").value = "";
+    document.getElementById("isbn").value = "";
+});
