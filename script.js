@@ -1,6 +1,7 @@
 const submitBtn = document.getElementById("submit");
 const bookList = document.getElementById("book-list");
 
+// ADD BOOK
 submitBtn.addEventListener("click", function () {
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
@@ -22,4 +23,11 @@ submitBtn.addEventListener("click", function () {
     document.getElementById("title").value = "";
     document.getElementById("author").value = "";
     document.getElementById("isbn").value = "";
+});
+
+
+bookList.addEventListener("click", function (e) {
+    if (e.target.classList.contains("delete")) {
+        e.target.closest("tr").remove();
+    }
 });
